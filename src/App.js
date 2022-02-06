@@ -8,8 +8,9 @@ import {
   useParams
 } from "react-router-dom";
 import Home from "./containers/home";
-import { useSelector, useDispatch } from 'react-redux'
-import counterSlice from './redux/reducers/counter';
+import { useSelector, useDispatch  } from 'react-redux'
+import { increment, decrement } from './redux/slices/counter';
+
 
 export default function App() {
   const [auth, setAuth] = useState(false);
@@ -23,6 +24,7 @@ export default function App() {
 
   return (
     <>
+
     {!auth ? 
         <>
           <p>Its not authenticated</p>
@@ -30,14 +32,14 @@ export default function App() {
           <div>
         <button
           aria-label="Increment value"
-          onClick={() => dispatch(counterSlice.increment())}
+          onClick={() => dispatch(increment())}
         >
           Increment
         </button>
         <span>{count}</span>
         <button
           aria-label="Decrement value"
-          onClick={() => dispatch(counterSlice.decrement())}
+          onClick={() => dispatch(decrement())}
         >
           Decrement
         </button>
