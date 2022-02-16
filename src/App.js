@@ -8,6 +8,7 @@ import {
   useParams
 } from "react-router-dom";
 import Home from "./containers/home";
+import Login from "./containers/login";
 import { useSelector, useDispatch  } from 'react-redux'
 import { increment, decrement } from './redux/slices/counter';
 
@@ -26,25 +27,28 @@ export default function App() {
     <>
 
     {!auth ? 
-        <>
-          <p>Its not authenticated</p>
-          <button onClick={loginClick} >LOGIN</button>
-          <div>
-        <button
-          aria-label="Increment value"
-          onClick={() => dispatch(increment())}
-        >
-          Increment
-        </button>
-        <span>{count}</span>
-        <button
-          aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
-        >
-          Decrement
-        </button>
-      </div>
-        </> :
+      <Login />
+      //   <>
+      //     <p>Its not authenticated</p>
+      //     <button onClick={loginClick} >LOGIN</button>
+      //     <div>
+      //   <button
+      //     aria-label="Increment value"
+      //     onClick={() => dispatch(increment())}
+      //   >
+      //     Increment
+      //   </button>
+      //   <span>{count}</span>
+      //   <button
+      //     aria-label="Decrement value"
+      //     onClick={() => dispatch(decrement())}
+      //   >
+      //     Decrement
+      //   </button>
+      // </div>
+      //   </> 
+        
+        :
         <Router>
           <div>
             <ul>
