@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import useStyles from "./style";
 
 const Login = () => {
@@ -10,7 +10,22 @@ const Login = () => {
                 item xs={4}
                 direction="column">
                 <div className={classes.leftPanel}>
-
+                    <Button tyle={{
+                        backgroundColor: '#ffffff',
+                        height: '70px',
+                        width: '40vh',
+                        marginBottom: '0.5vh'
+                    }}>
+                        LOGIN
+                    </Button>
+                    <Button style={{
+                        backgroundColor: '#ffffff',
+                        height: '70px',
+                        width: '40vh',
+                        marginBottom: '0.5vh'
+                    }}>
+                        SIGN UP
+                    </Button>
                 </div>
             </Grid>
             <Grid container
