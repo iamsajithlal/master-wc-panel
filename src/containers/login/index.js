@@ -10,9 +10,9 @@ const Login = () => {
                 item xs={4}
                 direction="column">
                 <div className={classes.leftPanel}>
-                    <Button tyle={{
+                    <Button style={{
                         backgroundColor: '#ffffff',
-                        height: '70px',
+                        height: '50px',
                         width: '40vh',
                         marginBottom: '0.5vh'
                     }}>
@@ -20,7 +20,7 @@ const Login = () => {
                     </Button>
                     <Button style={{
                         backgroundColor: '#ffffff',
-                        height: '70px',
+                        height: '50px',
                         width: '40vh',
                         marginBottom: '0.5vh'
                     }}>
@@ -31,7 +31,12 @@ const Login = () => {
             <Grid container
                 item xs={8}
                 direction="column" >
-
+                <div backgroundColor="red" style={{
+                    width: '100%',
+                    height: '100vh'
+                }}>
+                    <p>helloo</p>
+                </div>
             </Grid>
         </Grid>
     )
