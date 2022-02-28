@@ -6,7 +6,6 @@ import React, { useState, lazy, Suspense } from "react";import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
-//import Home from '../containers/home';
 
 const Home = lazy(() => import('../containers/home'));
 
