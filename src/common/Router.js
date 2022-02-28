@@ -1,4 +1,4 @@
-import React, { useState } from "react";import {
+import React, { useState, lazy, Suspense } from "react";import {
   BrowserRouter as Router,
   Switch,
   Route,
@@ -6,7 +6,9 @@ import React, { useState } from "react";import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
-import Home from '../containers/home';
+//import Home from '../containers/home';
+
+const Home = lazy(() => import('../containers/home'));
 
 
 const _Router = () => {
@@ -24,18 +26,19 @@ const _Router = () => {
           <Link to="/topics">Topics</Link>
         </li>
       </ul>
-      
-      <Switch>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/topics">
-          <Topics />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
+      <Suspense fallback={<div>Loading.....</div>}>
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/topics">
+            <Topics />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Suspense>
     </div>
   </Router>
   );

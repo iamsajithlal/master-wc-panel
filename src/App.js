@@ -1,13 +1,4 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
-} from "react-router-dom";
-import Home from "./containers/home";
 import Login from "./containers/login";
 import { useSelector, useDispatch  } from 'react-redux'
 import { increment, decrement } from './redux/slices/counter';
@@ -48,7 +39,6 @@ export default function App() {
       //   </button>
       // </div>
       //   </> 
-        
         : <_Router />
         }
     </>
