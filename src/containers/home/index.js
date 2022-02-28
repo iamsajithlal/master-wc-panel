@@ -1,8 +1,16 @@
 import React from "react";
+import {
+    Link,
+    useRouteMatch,
+  } from "react-router-dom";
 
 const Home = () => {
+    let match = useRouteMatch();
     return(
-        <p>Hello Home</p>
+        <>
+          <h1>Hello Home</h1>
+        </>
+      
     );
 }
 

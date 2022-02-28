@@ -1,4 +1,5 @@
-import React, { useState, lazy, Suspense } from "react";import {
+import React, { lazy, Suspense } from "react";
+import {
   BrowserRouter as Router,
   Switch,
   Route,
@@ -6,48 +7,32 @@ import React, { useState, lazy, Suspense } from "react";import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
-//import Home from '../containers/home';
-
+import Header from "./Header";
 const Home = lazy(() => import('../containers/home'));
+const About = lazy(() => import('../containers/about'));
 
 
 const _Router = () => {
   return(
     <Router>
-    <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/topics">Topics</Link>
-        </li>
-      </ul>
+      <>
+      <Header />
       <Suspense fallback={<div>Loading.....</div>}>
         <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
+          <Route path="/" component={Home} />
+          <Route path="/about" component={About} />
           <Route path="/topics">
             <Topics />
           </Route>
-          <Route path="/">
-            <Home />
-          </Route>
         </Switch>
       </Suspense>
-    </div>
+      </>
   </Router>
   );
        
 };
 
-function About() {
-    return <h2>About</h2>;
-  }
+
   
   function Topics() {
     let match = useRouteMatch();
