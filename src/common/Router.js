@@ -1,34 +1,45 @@
-import React, { useState } from "react";
+import React, { useState } from "react";import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
+import Home from '../containers/home';
 
 
-const Router = () =>{
-        <Router>
-          <div>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/topics">Topics</Link>
-              </li>
-            </ul>
-            
-            <Switch>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/topics">
-                <Topics />
-              </Route>
-              <Route path="/">
-                <Home />
-              </Route>
-            </Switch>
-          </div>
-        </Router>
+const _Router = () => {
+  return(
+    <Router>
+    <div>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/topics">Topics</Link>
+        </li>
+      </ul>
+      
+      <Switch>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/topics">
+          <Topics />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </div>
+  </Router>
+  );
+       
 };
 
 function About() {
@@ -74,4 +85,4 @@ function About() {
     return <h3>Requested topic ID: {topicId}</h3>;
   }
 
-export default Router;
+export default _Router;

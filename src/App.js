@@ -11,7 +11,7 @@ import Home from "./containers/home";
 import Login from "./containers/login";
 import { useSelector, useDispatch  } from 'react-redux'
 import { increment, decrement } from './redux/slices/counter';
-import Router from './common/Router';
+import _Router from './common/Router';
 
 
 export default function App() {
@@ -49,7 +49,7 @@ export default function App() {
       // </div>
       //   </> 
         
-        : <Router />
+        : <_Router />
         }
     </>
   );
