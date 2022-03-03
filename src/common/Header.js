@@ -1,31 +1,14 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () =>{
-    let history = useHistory();
     return(
         <ul>
             <li>
-                <button onClick={()=>{
-                    history.push("/")
-                }}>
-                    Home
-                </button>
+                <Link to="/" >Home</Link>
             </li>
             <li>
-            <button onClick={()=>{
-                    history.push("/about")
-                }}>
-                    about
-                </button>
-               
-            </li>
-            <li>
-            <button onClick={()=>{
-                    history.push("/topics")
-                }}>
-                    Topics
-                </button>
+                <Link to="/about">about</Link>
             </li>
         </ul>
     );
