@@ -1,46 +1,14 @@
 import React, { useState } from "react";
 import Login from "./containers/login";
-import { useSelector, useDispatch  } from 'react-redux'
-import { increment, decrement } from './redux/slices/counter';
+import { useSelector, useDispatch } from 'react-redux'
 import _Router from './common/Router';
 
-
 export default function App() {
-  const [auth, setAuth] = useState(true);
-
-  const loginClick = () =>{
-    setAuth(true);
-  }
-
-  const count = useSelector((state) => state.counter.value)
-  const dispatch = useDispatch()
+  const auth = useSelector((state) => state.login.value);
 
   return (
     <>
-
-    {!auth ? 
-      <Login />
-      //   <>
-      //     <p>Its not authenticated</p>
-      //     <button onClick={loginClick} >LOGIN</button>
-      //     <div>
-      //   <button
-      //     aria-label="Increment value"
-      //     onClick={() => dispatch(increment())}
-      //   >
-      //     Increment
-      //   </button>
-      //   <span>{count}</span>
-      //   <button
-      //     aria-label="Decrement value"
-      //     onClick={() => dispatch(decrement())}
-      //   >
-      //     Decrement
-      //   </button>
-      // </div>
-      //   </> 
-        : <_Router />
-        }
+      {!auth ? <Login /> : <_Router />}
     </>
   );
 }
